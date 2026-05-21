@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Rosta Bar-resto-lounge | Goma</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">La Rosta</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#menu">La Carte</a></li>
+                    <li><a href="#galerie">Galerie</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="accueil" class="hero-carousel">
+        <div class="carousel-slide slide1" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=1200');"></div>
+        <div class="carousel-slide slide2" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200');"></div>
+        <div class="carousel-slide slide3" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1200');"></div>
+        
+        <div class="hero-content">
+            <h1>LA ROSTA</h1>
+            <p>Bar • Restaurant • Lounge à Goma</p>
+            <a href="#menu" class="btn">Découvrir la carte</a>
+        </div>
+    </section>
+
+    <section id="concept">
+        <h2 class="section-title">Le Concept</h2>
+        <div class="about-content">
+            <p>Bienvenue à La Rosta, l'adresse incontournable de Goma pour savourer des instants uniques. Que ce soit pour un déjeuner d'affaires, un dîner chaleureux en famille, ou pour vibrer au rythme de nos soirées lounge autour d'un cocktail signature, notre équipe vous accueille dans un cadre moderne, chic et décontracté.</p>
+        </div>
+    </section>
+
+        <section id="menu">
+        <h2 class="section-title">Notre Carte</h2>
+        <div class="menu-grid">
+            
+            <div class="menu-category">
+                <h3>Côté Restaurant</h3>
+                <div id="conteneur-resto"></div>
+            </div>
+
+            <div class="menu-category">
+                <h3>Bar & Cocktails</h3>
+                <div id="conteneur-bar"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Tes données sont stockées directement ici. 
+        // Tu as juste à modifier les textes ou ajouter des lignes ici pour changer le menu !
+        const monMenu = {
+            "restaurant": [
+                { "nom": "Grillades du jour (Poulet/Poisson)", "prix": "15 $" },
+                { "nom": "Plats locaux & accompagnements", "prix": "10 $" },
+                { "nom": "Burgers & frites maison", "prix": "12 $" },
+                { "nom": "Brochettes de chèvre de Goma", "prix": "8 $" }
+            ],
+            "bar": [
+                { "nom": "Cocktail Signature La Rosta", "prix": "7 $" },
+                { "nom": "Sélection de Vins & Champagnes", "prix": "25 $" },
+                { "nom": "Bières locales & Importées", "prix": "4 $" },
+                { "nom": "Mixologue Spécial Lounge", "prix": "9 $" }
+            ]
+        };
+
+        // Le code qui affiche tout automatiquement sur l'écran
+        const conteneurResto = document.getElementById('conteneur-resto');
+        const conteneurBar = document.getElementById('conteneur-bar');
+
+        // 1. Affichage du Resto
+        monMenu.restaurant.forEach(plat => {
+            conteneurResto.innerHTML += `
+                <div class="menu-item">
+                    <span class="item-name">${plat.nom}</span>
+                    <span class="item-price">${plat.prix}</span>
+                </div>
+            `;
+        });
+
+        // 2. Affichage du Bar
+        monMenu.bar.forEach(boisson => {
+            conteneurBar.innerHTML += `
+                <div class="menu-item">
+                    <span class="item-name">${boisson.nom}</span>
+                    <span class="item-price">${boisson.prix}</span>
+                </div>
+            `;
+        });
+    </script>
+
+</body>
+</html>
+
+
+    <section id="galerie">
+        <h2 class="section-title">En Images</h2>
+        <div class="galerie-grid">
+            <div class="galerie-item">
+                <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=600" alt="Ambiance La Rosta">
+                <div class="galerie-overlay">L'Ambiance Lounge</div>
+            </div>
+            <div class="galerie-item">
+                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600" alt="Cocktails La Rosta">
+                <div class="galerie-overlay">Nos Cocktails</div>
+            </div>
+            <div class="galerie-item">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600" alt="Plats La Rosta">
+                <div class="galerie-overlay">La Cuisine</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Infos & Réservations</h2>
+        <div class="contact-container">
+            
+                 <div class="contact-info">
+                <h3>Nous Trouver & Nous Contacter</h3>
+                <p>
+                    📍 Adresse : 
+                    <a href="Https://maps.app.goo.gl/fak88WWsihZzWut48" target="_blank" class="maps-link">
+                        Goma, RDC (Ouvrir dans Google Maps)
+                    </a>
+                </p>
+                <p>📞 Téléphone : +243 821 222 212</p>
+                <p>💬 Réservations recommandées pour le week-end.</p>
+                <a href="tel:+243821222212" class="btn btn-booking" style="margin-top: 15px; display: inline-block;">Appeler pour Réserver</a>
+            </div>
+
+
+            <div class="contact-hours">
+                <h3>Horaires d'Ouverture</h3>
+                <p>🕒 Lundi - Jeudi : 11h00 - 23h00</p>
+                <p>🕒 Vendredi - Samedi : 11h00 - Jusqu'à l'aube (Ambiance Lounge)</p>
+                <p>🕒 Dimanche : 12h00 - 23h00</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vicky Vihamba Oby. Tous droits réservés.</p>
+    </footer>
+    <a href="https://wa.me/243821222212?text=Bonjour%20La%20Rosta,%20je%20souhaite%20obtenir%20des%20informations%20ou%20faire%20une%20r%C3%A9servation." class="whatsapp-float" target="_blank">
+        <span class="wa-icon">💬 WhatsApp</span>
+    </a>
+
+</body>
+</html>
