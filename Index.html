@@ -160,6 +160,17 @@
     <a href="https://wa.me/243821222212?text=Bonjour%20La%20Rosta,%20je%20souhaite%20obtenir%20des%20informations%20ou%20faire%20une%20r%C3%A9servation." class="whatsapp-float" target="_blank">
         <span class="wa-icon">💬 WhatsApp</span>
     </a>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
